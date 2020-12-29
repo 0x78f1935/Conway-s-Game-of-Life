@@ -44,4 +44,5 @@ To start the game:
  - F: Fullscreen
 
 ### If sandbox is enabled
- - Mouse Click: Add population to cell
+ - Left Mouse Button: Add population to cell
+ - Right Mouse Button: Nuke all cells
