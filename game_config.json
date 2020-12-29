@@ -1,0 +1,7 @@
+{
+    "gridsize": 50,
+
+    "settings": {
+        "targetfps": 60
+    }
+}
