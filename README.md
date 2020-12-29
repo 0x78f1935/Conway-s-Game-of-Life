@@ -16,10 +16,11 @@ create a `game_config.json` file in the root of the project directory.
 copy and paste the following content into that file.
 
     {
-        "gridsize": 100,
+        "gridsize": 50,
 
         "settings": {
-            "targetfps": 60
+            "targetfps": 60,
+            "sandbox": false
         }
     }
 
@@ -35,3 +36,7 @@ To install the dependencies:
 To start the game:
 
     python game.py
+
+## Key-Binding
+
+ - Q: Quits the game

@@ -33,16 +33,17 @@ class Game(Core):
 
     def start(self) -> None:
         print("Installing settings")
-        gridsize = self.config["gridsize"]
-        gamefps = self.settings["targetfps"]
-        grid = self.random_grid(gridsize)
+        if self.settings["sandbox"]:
+            # grid = np.array([]) # TODO sandbox mode
+            grid = self.random_grid(self.config["gridsize"])
+        else: grid = self.random_grid(self.config["gridsize"])
 
         print("Game started ... ")
         fig, ax = plt.subplots()
         img = ax.imshow(grid, interpolation='nearest')
-        ani = animation.FuncAnimation(fig, self.update, fargs=(img, grid, gridsize, ),
+        ani = animation.FuncAnimation(fig, self.update, fargs=(img, grid, ),
                                 frames = 10,
-                                interval=gamefps,
+                                interval=self.settings["targetfps"],
                                 save_count=50)
         plt.show()
         print("... Game ended")

@@ -2,6 +2,7 @@
     "gridsize": 50,
 
     "settings": {
-        "targetfps": 60
+        "targetfps": 60,
+        "sandbox": true
     }
 }
