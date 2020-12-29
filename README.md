@@ -16,11 +16,11 @@ create a `game_config.json` file in the root of the project directory.
 copy and paste the following content into that file.
 
     {
-        "gridsize": 50,
+        "gridsize": 100,
 
         "settings": {
             "targetfps": 60,
-            "sandbox": false
+            "sandbox": true
         }
     }
 
@@ -40,3 +40,8 @@ To start the game:
 ## Key-Binding
 
  - Q: Quits the game
+ - G (Toggle): Enable grid lines
+ - F: Fullscreen
+
+### If sandbox is enabled
+ - Mouse Click: Add population to cell

@@ -9,10 +9,10 @@ class Game(Core):
         """
         Instantiate before the game launches
         """
-        Core().__init__()
+        Core.__init__(self)
         self.config = self.load_config()
         self.settings = self.config["settings"]
-        self.gridvalues = [255, 0] # ON / OFF ; True / False
+        self.gridvalues = [255, 0]
     
     def load_config(self) -> object:
         """
@@ -33,14 +33,13 @@ class Game(Core):
 
     def start(self) -> None:
         print("Installing settings")
-        if self.settings["sandbox"]:
-            # grid = np.array([]) # TODO sandbox mode
-            grid = self.random_grid(self.config["gridsize"])
-        else: grid = self.random_grid(self.config["gridsize"])
+        grid = self.random_grid(self.config["gridsize"])
 
         print("Game started ... ")
         fig, ax = plt.subplots()
+        self.set_figure(fig)
         img = ax.imshow(grid, interpolation='nearest')
+
         ani = animation.FuncAnimation(fig, self.update, fargs=(img, grid, ),
                                 frames = 10,
                                 interval=self.settings["targetfps"],
